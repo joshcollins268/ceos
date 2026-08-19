@@ -1,0 +1,12 @@
+# Managed centrally. Monthly cadence + grouped minor/patch keeps version-update
+# noise low; SECURITY updates are separate and always immediate.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 5
+    groups:
+      github-actions-minor-and-patch:
+        update-types: ["minor", "patch"]
